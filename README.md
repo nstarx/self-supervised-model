@@ -5,9 +5,11 @@ For a fraud detection project, where we have transaction data for phone numbers 
 
 In this repo we create a robust fraud detection system that leverages self-supervised learning using Autoencoders to detect fraudulent transactions without the need for labeled data. Additionally, as fraud patterns evolve, this model will be able to adapt and generalize better.
 
-# Objective:
+# Objectives:
 
-For such a fraud detection project, where we have transaction data for phone numbers but lack labels (i.e., we don't know which transactions are fraudulent), a deep learning-based, self-supervised approach is a great idea. Since we don't have labeled data, we will need to design a model that can learn useful patterns and representations from the data itself. Here is an innovative methods we are exploring in this repo:
+The objective of this repository is to build an efficient and scalable fraud detection system using a deep learning-based, self-supervised learning approach. The system aims to identify fraudulent transactions from transaction data, particularly when labeled data is not available. Instead of relying on traditional supervised models that need labeled fraud indicators, this repository employs autoencoders for anomaly detection, allowing the system to flag unusual or potentially fraudulent transactions based on reconstruction errors.
+
+Given that fraud patterns are often dynamic and evolve over time, this self-supervised approach helps the model generalize and adapt without requiring labeled examples, making it especially useful in real-world scenarios where obtaining labeled fraud data is challenging or infeasible.
 
 # Anomaly Detection using Autoencoders:
 
