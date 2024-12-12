@@ -7,15 +7,19 @@ from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 
 # Load the dataset (Assume the dataset like the Kaggle Fraud Dataset)
-
-# load a CSV file 
-df = pd.read_csv('creditcard.csv')  # Replace with dataset path
+df = pd.read_csv('paysim dataset.csv')  # Load a CSV file, replace with dataset path
+df = df.drop(columns=['step','type','nameOrig','nameDest','isFlaggedFraud']) # Drop irrelevant columns
+print(df)
+print(df[["isFraud"]].value_counts()) # Distribution of fraudulent cases in the dataset
 
 # Preprocess data (scaling all numerical features)
 scaler = StandardScaler()
-df['Amount'] = scaler.fit_transform(df['Amount'].values.reshape(-1, 1))
-X = df.drop(columns=['Class', 'Time'])  # Drop the target column ('Class') and irrelevant columns ('Time')
-y = df['Class']
+df['amount'] = scaler.fit_transform(df['amount'].values.reshape(-1, 1))
+df['oldbalanceOrg'] = scaler.fit_transform(df['oldbalanceOrg'].values.reshape(-1, 1))
+df['oldbalanceDest'] = scaler.fit_transform(df['oldbalanceDest'].values.reshape(-1, 1))
+df['newbalanceDest'] = scaler.fit_transform(df['newbalanceDest'].values.reshape(-1, 1))
+X = df.drop(columns=['isFraud'])  # Drop the target column ('isFraud') and irrelevant columns ('Time')
+y = df['isFraud']
 
 # Split the data into training and testing datasets
 X_train, X_test = train_test_split(X, test_size=0.2, random_state=42)
