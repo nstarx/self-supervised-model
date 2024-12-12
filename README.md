@@ -1,4 +1,7 @@
-# self-supervised-model:
+# Use case:
+For a fraud detection project, where we have transaction data for phone numbers but lack labels (i.e., we don't know which transactions are fraudulent), a deep learning-based, self-supervised approach is the best choice. Since we don't have labeled data, we will need to design a model that can learn useful patterns and representations from the data itself.
+
+# Self-supervised-model:
 
 In this repo we create a robust fraud detection system that leverages self-supervised learning using Autoencoders to detect fraudulent transactions without the need for labeled data. Additionally, as fraud patterns evolve, this model will be able to adapt and generalize better.
 
